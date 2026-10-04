@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Hallmarks Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Hallmark workspace</p>
+    <h1>Marks, materials, and evidence anchors</h1>
+    <p class="muted">Synthetic hallmark records mirror the review shape without using a private corpus.</p>
+  </div>
+</section>
+
+<section class="knowledge-list">
+  {% for hallmark in hallmarks %}
+  <article class="framed-panel">
+    <span>{{ hallmark.material }}</span>
+    <h2>{{ hallmark.mark }}</h2>
+    <p>{{ hallmark.interpretation }}</p>
+    <div class="tag-row">
+      {% for item in hallmark.evidence %}<small>{{ item }}</small>{% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

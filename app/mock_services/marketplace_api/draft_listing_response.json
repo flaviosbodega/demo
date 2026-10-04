@@ -1,0 +1,8 @@
+{
+  "service": "marketplace_api",
+  "status": "draft_created",
+  "draft_id": "draft-001",
+  "external_write": false,
+  "message": "Synthetic listing draft prepared locally.",
+  "demo_only": true
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "src-met-api",
+    "name": "Museum API sample",
+    "kind": "Objects source",
+    "description": "Represents a configured museum/object source RChive can pull archive records from.",
+    "simulated_url": "mock://sources/museum-api/objects",
+    "status": "Pull simulated"
+  },
+  {
+    "id": "src-jewellery-reference",
+    "name": "Specialist jewellery source",
+    "kind": "Hallmarks and objects",
+    "description": "Represents a specialist source for object and hallmark-style research records.",
+    "simulated_url": "mock://sources/jewellery-reference/both",
+    "status": "Enabled"
+  },
+  {
+    "id": "src-local-intake",
+    "name": "Local object intake",
+    "kind": "Physical inventory",
+    "description": "Represents V49's local object intake and evidence staging for user-owned objects.",
+    "simulated_url": "mock://sources/local-items",
+    "status": "Demo only"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "hall-parrot",
+    "mark": "No visible front mark - brooch back required",
+    "material": "Costume jewellery",
+    "interpretation": "Demo result routes the brooch to back-side inspection before maker or metal claims are made.",
+    "evidence": ["front_image_only", "clasp_check_needed", "publish_disclosure_required"]
+  },
+  {
+    "id": "hall-ring",
+    "mark": "Possible silver/maker stamp inside band",
+    "material": "Silver-tone ring",
+    "interpretation": "Demo candidate links the feather ring to maker review and metal verification, without exposing a real maker database.",
+    "evidence": ["maker_candidate", "metal_uncertain", "human_review_required"]
+  },
+  {
+    "id": "hall-dante",
+    "mark": "DANTE inscription visible on bust",
+    "material": "Bronze/brass/copper tone",
+    "interpretation": "Demo mark is treated as subject inscription, not a maker hallmark.",
+    "evidence": ["subject_inscription", "material_review", "not_maker_mark"]
+  }
+]

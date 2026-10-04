@@ -1,0 +1,7 @@
+{
+  "service": "marketplace_api",
+  "status": "blocked",
+  "external_write": false,
+  "message": "Live marketplace writes are disabled in this sanitized demo.",
+  "demo_only": true
+}

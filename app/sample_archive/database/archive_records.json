@@ -1,0 +1,20 @@
+[
+  {
+    "record_id": "obj-parrot-brooch",
+    "title": "Rhinestone Parrot Brooch",
+    "image": "images/parrot-brooch.jpg",
+    "status": "Ready for Draft"
+  },
+  {
+    "record_id": "obj-dante-bust",
+    "title": "Dante Bronze-Tone Bust",
+    "image": "images/dante-bust.jpg",
+    "status": "Researching"
+  },
+  {
+    "record_id": "obj-feather-ring",
+    "title": "Feather Motif Silver Ring",
+    "image": "images/nelson-feather-ring.jpg",
+    "status": "Needs Review"
+  }
+]

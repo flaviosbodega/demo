@@ -1,0 +1,5 @@
+{
+  "status": "mocked",
+  "message": "Production visual search is replaced by prepared sample matches.",
+  "matches": ["match-parrot", "match-ring", "match-dante"]
+}

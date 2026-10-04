@@ -1,0 +1,44 @@
+[
+  {
+    "task": "Open collection record",
+    "route": "Local demo database",
+    "status": "Available",
+    "demo_behavior": "Reads from app/mock_data/objects.json."
+  },
+  {
+    "task": "Identify uploaded image",
+    "route": "Hosted visual search service",
+    "status": "Simulated",
+    "demo_behavior": "Returns fixed matches from visual_matches.json; uploads are not persisted."
+  },
+  {
+    "task": "Search Knowledge library",
+    "route": "Hosted Knowledge index",
+    "status": "Simulated",
+    "demo_behavior": "Searches local synthetic article content as if using a hosted index."
+  },
+  {
+    "task": "Estimate value band",
+    "route": "Hosted valuation service",
+    "status": "Simulated",
+    "demo_behavior": "Displays prewritten value bands on object records."
+  },
+  {
+    "task": "Validate listing draft",
+    "route": "Commerce endpoint",
+    "status": "Mock-write only",
+    "demo_behavior": "Returns a success response without contacting a marketplace."
+  },
+  {
+    "task": "Publish listing",
+    "route": "Commerce endpoint",
+    "status": "Blocked",
+    "demo_behavior": "Always returns a blocked response. Live writes are disabled."
+  },
+  {
+    "task": "Sync mobile capture",
+    "route": "Mobile companion sync",
+    "status": "Placeholder",
+    "demo_behavior": "Shows sample capture sessions without a real mobile app."
+  }
+]

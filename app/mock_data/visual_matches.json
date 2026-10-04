@@ -1,0 +1,26 @@
+[
+  {
+    "id": "match-parrot",
+    "title": "Rhinestone parrot brooch",
+    "confidence": 88,
+    "rationale": "Mock visual search matched bird silhouette, clear stone rows, black eye, and long tail feathers.",
+    "next_step": "Check clasp, missing stones, back marks, and listing disclosure fields.",
+    "image": "/images/parrot-brooch.jpg"
+  },
+  {
+    "id": "match-ring",
+    "title": "Feather motif silver ring",
+    "confidence": 76,
+    "rationale": "Mock visual search matched feather form, patina, open band shape, and stamped detail.",
+    "next_step": "Capture interior marks and route to hallmark review.",
+    "image": "/images/nelson-feather-ring.jpg"
+  },
+  {
+    "id": "match-dante",
+    "title": "Dante bronze-tone bust",
+    "confidence": 71,
+    "rationale": "Mock visual search matched bust form, helmet profile, inscription, and patinated metal surface.",
+    "next_step": "Compare material notes and inspect base underside.",
+    "image": "/images/dante-bust.jpg"
+  }
+]

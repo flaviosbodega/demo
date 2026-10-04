@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Stylized walnut chair">
+  <rect width="800" height="600" fill="#ece8de"/>
+  <rect x="260" y="170" width="280" height="260" rx="18" fill="#6f4732"/>
+  <path d="M285 190 Q400 100 515 190" fill="none" stroke="#3a241a" stroke-width="34" stroke-linecap="round"/>
+  <rect x="300" y="315" width="200" height="34" fill="#d5bd8b"/>
+  <path d="M306 315 L494 349 M494 315 L306 349" stroke="#876a3d" stroke-width="6"/>
+  <rect x="294" y="420" width="28" height="130" fill="#4d2f22"/>
+  <rect x="478" y="420" width="28" height="130" fill="#4d2f22"/>
+  <rect x="326" y="448" width="148" height="18" fill="#4d2f22"/>
+  <circle cx="400" cy="190" r="28" fill="#9b6b43"/>
+  <text x="400" y="560" text-anchor="middle" font-family="Arial" font-size="26" fill="#58463b">Synthetic sample image</text>
+</svg>

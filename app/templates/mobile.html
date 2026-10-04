@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Mobile Companion Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Mobile companion</p>
+    <h1>Capture and sync placeholders</h1>
+    <p class="muted">This page simulates mobile capture sessions without requiring a mobile app.</p>
+  </div>
+</section>
+
+<section class="mobile-list">
+  {% for session in sessions %}
+  <article>
+    <div class="qr">QR</div>
+    <div>
+      <span>{{ session.status }}</span>
+      <h2>{{ session.title }}</h2>
+      <p>{{ session.notes }}</p>
+      <small>{{ session.sync_target }}</small>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

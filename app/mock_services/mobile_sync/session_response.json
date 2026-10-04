@@ -1,0 +1,8 @@
+{
+  "service": "mobile_sync",
+  "status": "placeholder",
+  "session_id": "mob-001",
+  "persistent_upload": false,
+  "message": "Mobile companion sync is represented as a placeholder only.",
+  "demo_only": true
+}

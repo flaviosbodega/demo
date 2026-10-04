@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Sources and Import Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Sources and local files</p>
+    <h1>Registry, staging, and import simulation</h1>
+    <p class="muted">No remote content is fetched. Local-file intake and source pulls are represented with synthetic rows.</p>
+  </div>
+</section>
+
+<section class="service-table">
+  {% for source in sources %}
+  <article>
+    <div>
+      <span>{{ source.kind }}</span>
+      <h2>{{ source.name }}</h2>
+      <p>{{ source.description }}</p>
+      <small>{{ source.simulated_url }}</small>
+    </div>
+    <strong>{{ source.status }}</strong>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="timeline">
+  <article>
+    <span>Local file ingestion</span>
+    <h2>Staged sample workbook</h2>
+    <p>A synthetic intake row stands in for CSV/XLS import, filename validation, staged-file inspection, and rollback-safe archive import.</p>
+    <small>No files leave the demo and no archive database is modified.</small>
+  </article>
+  <article>
+    <span>Taxonomy</span>
+    <h2>Classification preview</h2>
+    <p>Objects are assigned broad categories such as Decorative Art, Fine Art, Antique Furniture, and Design Object.</p>
+    <small>Demo categories are fixed sample values.</small>
+  </article>
+</section>
+{% endblock %}

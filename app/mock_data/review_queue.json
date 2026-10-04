@@ -1,0 +1,23 @@
+[
+  {
+    "id": "cand-parrot",
+    "title": "Brooch candidate: costume jewellery parrot",
+    "status": "READY",
+    "evidence": "Evidence anchor: bird silhouette, clear rhinestone rows, black eye accent, and long tail feathers in approved sample image.",
+    "diagnostics": ["image_anchor_present", "commerce_fields_present", "back_mark_needed"]
+  },
+  {
+    "id": "cand-ring",
+    "title": "Ring candidate: feather motif maker clue",
+    "status": "NEEDS_REVIEW",
+    "evidence": "Evidence anchor: feather form, silver-tone patina, local maker-folder context, and possible inner-band mark.",
+    "diagnostics": ["maker_candidate", "metal_uncertain", "human_review_required"]
+  },
+  {
+    "id": "cand-dante",
+    "title": "Bust candidate: Dante subject inscription",
+    "status": "CANDIDATE",
+    "evidence": "Evidence anchor: DANTE inscription visible across the bust base; treated as subject evidence rather than maker identity.",
+    "diagnostics": ["subject_inscription", "material_review", "source_unverified"]
+  }
+]

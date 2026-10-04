@@ -1,0 +1,32 @@
+[
+  {
+    "id": "draft-parrot",
+    "object_id": "obj-parrot-brooch",
+    "channel": "Mock marketplace readiness",
+    "title": "Rhinestone Parrot Brooch - Demo Draft",
+    "description": "Sample listing draft generated from the archive record, image notes, condition fields, and disclosure prompts.",
+    "price": "$58 demo price",
+    "condition": "Good demo condition; back-side marks and clasp still need review.",
+    "shipping": "Small jewellery parcel placeholder.",
+    "disclosures": [
+      "Synthetic/demo listing only.",
+      "No live marketplace connection.",
+      "Publishing disabled."
+    ]
+  },
+  {
+    "id": "draft-ring",
+    "object_id": "obj-feather-ring",
+    "channel": "Manual/export preparation",
+    "title": "Feather Motif Silver-Tone Ring - Review Pending",
+    "description": "Draft preview shows how an object can be prepared while maker and metal confidence remain under review.",
+    "price": "$95 demo midpoint",
+    "condition": "Visible patina; maker and metal claims require confirmation.",
+    "shipping": "Small insured parcel placeholder.",
+    "disclosures": [
+      "Maker attribution is a demo candidate.",
+      "Metal content is not verified.",
+      "Live publishing is blocked."
+    ]
+  }
+]

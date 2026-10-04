@@ -1,0 +1,34 @@
+[
+  {
+    "id": "know-jewellery-001",
+    "category": "Jewellery",
+    "title": "Brooch and Dress Ornament Intake",
+    "summary": "Demo Knowledge entry for recording form, stones, settings, clasp condition, and visible wear on brooches and dress ornaments.",
+    "tags": ["brooch", "jewellery", "condition"],
+    "demo_disclosure": "Inspired by the provided antique jewellery reference file and rewritten as short demo guidance. The production Knowledge corpus is not included."
+  },
+  {
+    "id": "know-jewellery-002",
+    "category": "Stones and Settings",
+    "title": "Rhinestone Surface Review",
+    "summary": "Sample guidance for checking missing stones, bright facets, glue residue, prong condition, and replacement risk.",
+    "tags": ["rhinestone", "setting", "costume jewellery"],
+    "demo_disclosure": "Sample result only. This does not reveal ranking, extraction, or private reference methods."
+  },
+  {
+    "id": "know-object-003",
+    "category": "Decorative Art",
+    "title": "Patinated Metal Bust Notes",
+    "summary": "Demo note for documenting patina, inscription, base material, casting detail, and uncertainty before valuation.",
+    "tags": ["bronze", "bust", "patina"],
+    "demo_disclosure": "This is a synthetic Knowledge card tied to the approved Dante sample object."
+  },
+  {
+    "id": "know-hallmark-004",
+    "category": "Hallmarks",
+    "title": "Silver-Tone Ring Evidence Checklist",
+    "summary": "Sample checklist for visible marks, maker clues, metal color, wear, seam detail, and confidence level.",
+    "tags": ["ring", "silver", "hallmark"],
+    "demo_disclosure": "Hallmark matching is mocked. No private maker database or production corpus is exposed."
+  }
+]

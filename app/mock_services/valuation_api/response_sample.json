@@ -1,0 +1,9 @@
+{
+  "service": "valuation_api",
+  "status": "simulated",
+  "object_id": "obj-003",
+  "value_band": "$1,200-$2,000",
+  "confidence": "medium",
+  "basis": ["synthetic comparables", "condition note", "category baseline"],
+  "demo_only": true
+}

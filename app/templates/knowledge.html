@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Knowledge Library Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Knowledge library</p>
+    <h1>Search synthetic reference content</h1>
+  </div>
+  <form class="filters" method="get">
+    <input name="q" value="{{ q }}" placeholder="Search material, period, marks">
+    <button>Search</button>
+  </form>
+</section>
+
+<section class="knowledge-list">
+  {% for article in articles %}
+  <article>
+    <span>{{ article.category }}</span>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.summary }}</p>
+    <div class="tag-row">
+      {% for tag in article.tags %}<small>{{ tag }}</small>{% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

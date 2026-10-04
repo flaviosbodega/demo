@@ -1,0 +1,38 @@
+[
+  {
+    "id": "res-parrot-001",
+    "object_id": "obj-parrot-brooch",
+    "date": "2026-10-04",
+    "source_type": "Object intake",
+    "title": "Brooch visual description",
+    "summary": "Parrot-shaped brooch with clear stones, silver-tone body, black eye accent, and long tail feathers.",
+    "confidence": "High"
+  },
+  {
+    "id": "res-parrot-002",
+    "object_id": "obj-parrot-brooch",
+    "date": "2026-10-04",
+    "source_type": "Commerce readiness",
+    "title": "Draft listing check",
+    "summary": "Demo readiness finds title, images, condition note, category, and disclosure fields present.",
+    "confidence": "Medium"
+  },
+  {
+    "id": "res-dante-001",
+    "object_id": "obj-dante-bust",
+    "date": "2026-10-04",
+    "source_type": "Research note",
+    "title": "Dante inscription and material review",
+    "summary": "Demo note flags inscription visibility, patinated metal surface, and base material uncertainty for further review.",
+    "confidence": "Medium"
+  },
+  {
+    "id": "res-ring-001",
+    "object_id": "obj-feather-ring",
+    "date": "2026-10-04",
+    "source_type": "Maker candidate",
+    "title": "Feather motif ring candidate",
+    "summary": "Demo note links feather motif, possible silver content, and maker-folder context to a review candidate.",
+    "confidence": "Low"
+  }
+]

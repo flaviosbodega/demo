@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Makers and Brands Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Archive identification metric</p>
+    <h1>Makers & Brands Identified</h1>
+    <p class="muted">Names are extracted from synthetic maker or artist metadata, then linked back to demo objects.</p>
+  </div>
+</section>
+
+<section class="knowledge-list">
+  {% for maker in makers %}
+  <article class="framed-panel">
+    <span>{{ maker.kind }}</span>
+    <h2>{{ maker.name }}</h2>
+    <p>{{ maker.note }}</p>
+    <div class="tag-row">
+      {% for item in maker.linked_objects %}<small>{{ item }}</small>{% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

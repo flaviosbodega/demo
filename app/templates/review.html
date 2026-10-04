@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Candidate Review Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Review and authoring</p>
+    <h1>Evidence-backed candidate queue</h1>
+    <p class="muted">Candidates, evidence anchors, diagnostics, and promotion actions are synthetic and non-mutating.</p>
+  </div>
+</section>
+
+<section class="knowledge-list">
+  {% for candidate in candidates %}
+  <article>
+    <span>{{ candidate.status }}</span>
+    <h2>{{ candidate.title }}</h2>
+    <p>{{ candidate.evidence }}</p>
+    <div class="tag-row">
+      {% for diagnostic in candidate.diagnostics %}<small>{{ diagnostic }}</small>{% endfor %}
+    </div>
+    <div class="actions">
+      <button data-demo-post="/api/v1/review/candidates/{{ candidate.id }}/promote">Simulate promote</button>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+<div id="commerce-result" class="result hidden"></div>
+{% endblock %}

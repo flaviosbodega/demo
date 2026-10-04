@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Stylized design lamp">
+  <rect width="800" height="600" fill="#eef1f5"/>
+  <rect x="315" y="120" width="170" height="95" rx="46" fill="#caa45d"/>
+  <rect x="386" y="208" width="28" height="210" fill="#314056"/>
+  <circle cx="400" cy="450" r="92" fill="#3f5f8f"/>
+  <circle cx="400" cy="450" r="44" fill="#eef1f5"/>
+  <path d="M315 168 H485" stroke="#7b6130" stroke-width="8"/>
+  <text x="400" y="535" text-anchor="middle" font-family="Arial" font-size="26" fill="#3a4455">Synthetic sample image</text>
+</svg>

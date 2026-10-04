@@ -1,0 +1,13 @@
+{
+  "service": "hosted_search",
+  "status": "simulated",
+  "query": "walnut chair carving",
+  "results": [
+    {
+      "object_id": "obj-001",
+      "title": "Carved Walnut Side Chair",
+      "score": 0.84
+    }
+  ],
+  "demo_only": true
+}

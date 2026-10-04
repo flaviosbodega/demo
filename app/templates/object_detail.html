@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{{ item.title }}{% endblock %}
+{% block content %}
+<section class="detail-layout">
+  <div>
+    <img class="detail-image" src="{{ url_for('static', path=item.image) }}" alt="{{ item.title }}">
+  </div>
+  <article class="detail">
+    <p class="eyebrow">{{ item.category }} / {{ item.status }}</p>
+    <h1>{{ item.title }}</h1>
+    <p>{{ item.description }}</p>
+    <div class="facts">
+      <div><span>Value</span><strong>{{ item.estimated_value }}</strong></div>
+      <div><span>Materials</span><strong>{{ item.materials }}</strong></div>
+      <div><span>Dimensions</span><strong>{{ item.dimensions }}</strong></div>
+      <div><span>Confidence</span><strong>{{ item.confidence_score }}%</strong></div>
+    </div>
+    <h2>AI-style summary</h2>
+    <p>{{ item.ai_summary }}</p>
+    <h2>Provenance and condition</h2>
+    <p>{{ item.provenance }}</p>
+    <p>{{ item.condition }}</p>
+    <div class="actions">
+      <a href="/identify">Run identification</a>
+      <a href="/knowledge?q={{ item.tags[0] }}">Search Knowledge</a>
+      <a href="/commerce">Prepare marketplace draft</a>
+      <a href="/api/objects/{{ item.id }}">Export record</a>
+    </div>
+  </article>
+</section>
+
+<section class="two-col">
+  <div>
+    <h2>Related research</h2>
+    {% for note in research %}
+    <article class="stack-card">
+      <span>{{ note.source_type }}</span>
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.summary }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <div>
+    <h2>Knowledge links</h2>
+    {% for article in knowledge %}
+    <article class="stack-card">
+      <span>{{ article.category }}</span>
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.summary }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

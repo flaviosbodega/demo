@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Commerce Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Commerce workflow</p>
+    <h1>Marketplace draft simulation</h1>
+    <p class="muted">Validation is mocked. Publishing is intentionally blocked.</p>
+  </div>
+</section>
+
+<section class="commerce-list">
+  {% for draft in drafts %}
+  <article class="draft">
+    <div>
+      <span>{{ draft.channel }}</span>
+      <h2>{{ draft.title }}</h2>
+      <p>{{ draft.description }}</p>
+    </div>
+    <div class="draft-meta">
+      <strong>{{ draft.price }}</strong>
+      <small>{{ draft.condition }}</small>
+      <small>{{ draft.shipping }}</small>
+    </div>
+    <pre>{{ draft.disclosures | join("\n") }}</pre>
+    <div class="actions">
+      <button data-demo-post="/commerce/validate">Validate listing</button>
+      <button data-demo-post="/commerce/publish">Publish</button>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+<div id="commerce-result" class="result hidden"></div>
+{% endblock %}

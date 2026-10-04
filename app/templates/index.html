@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+{% block title %}RChive V49 Showroom Demo{% endblock %}
+{% block content %}
+<section class="showroom-toolbar">
+  <div>
+    <p class="eyebrow">RChive Research Desktop</p>
+    <h1 id="page-title">Archive</h1>
+  </div>
+  <div class="topbar__actions">
+    <button type="button" data-guide="archive">Demo Guide</button>
+    <button type="button" data-mock-action="open-folder">▣ Open archive folder</button>
+    <button type="button" data-mock-action="refresh">↻ Refresh archive</button>
+  </div>
+</section>
+
+<section id="page-archive" class="showroom-page is-visible" data-title="Archive">
+  <article class="hero framed-panel" data-tip="This mirrors the V49 Archive dashboard. Counts and records come from a small sample archive, not the production database.">
+    <div class="hero__copy">
+      <p class="eyebrow">Your private research archive</p>
+      <div class="hero-rule" aria-hidden="true"><span>✦</span></div>
+      <h1>Find the object, mark, maker, or visual connection you remember.</h1>
+      <p>Search museum-style records, specialist references, hallmark notes, and approved sample objects in one sanitized RChive showroom.</p>
+      <form class="hero-search" data-demo-search>
+        <span aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Search rings, makers, periods, techniques..." autocomplete="off">
+        <button type="submit">Search archive</button>
+      </form>
+    </div>
+    <div class="hero__art">
+      <div class="hero__compass" aria-hidden="true"></div>
+      <img src="{{ url_for('static', path='/rchive-assets/lupepen.png') }}" alt="RChive visual search emblem">
+    </div>
+  </article>
+
+  <section class="metrics">
+    <div><strong>3</strong><span>Archive records</span></div>
+    <div><strong>3</strong><span>Visual references</span></div>
+    <div><strong>3</strong><span>Unique object keys</span></div>
+    <div><strong>1</strong><span>Import history</span></div>
+    <div><strong>4</strong><span>Knowledge entries</span></div>
+    <div><strong>0</strong><span>Live writes</span></div>
+  </section>
+
+  <section class="routing-grid">
+    <article class="result-card" data-tip="Local features stay on the user's machine in the current V49/Breadmaker direction.">
+      <span>Local foundation</span>
+      <h2>Archive, evidence, and desktop API</h2>
+      <p>Core archive records, local database behavior, evidence review, and local-first operation are represented as local capabilities in this showroom.</p>
+    </article>
+    <article class="result-card" data-tip="Hosted capabilities may be paid, concurrent, metered, or tier-dependent. The exact production routing matrix is still feature-by-feature.">
+      <span>Hosted / paid capabilities</span>
+      <h2>Remote AI and shared compute</h2>
+      <p>Heavier AI, remote compute, shared services, and high-throughput jobs may be hosted, subscription-based, credit-based, or limited by tier.</p>
+    </article>
+    <article class="result-card" data-tip="RChive is not a single local/remote switch. Routing is intended to be decided per capability.">
+      <span>Routed per capability</span>
+      <h2>Visual search, research, listing maker</h2>
+      <p>AI-assisted research, visual identification, listing generation, and other heavier tools can be local, hosted, or hybrid depending on hardware and plan.</p>
+    </article>
+  </section>
+
+  <section class="object-grid">
+    {% for item in objects %}
+    <article class="object-card" data-tip="{{ item.demo_note }}">
+      <img src="{{ url_for('static', path=item.image) }}" alt="{{ item.title }}">
+      <div>
+        <span>{{ item.category }}</span>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+        <strong>{{ item.estimated_value }}</strong>
+        <small>{{ item.status }}</small>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+</section>
+
+<section id="page-search" class="showroom-page" data-title="Search">
+  <section class="page-head"><div><p class="eyebrow">Structured discovery</p><h1>Search the archive</h1><p>Try a mock structured search across object type, maker, materials, techniques, marks, and source notes.</p></div></section>
+  <article class="control-panel framed-panel" data-tip="Production RChive searches indexed archive records. This demo searches only the sample objects and returns prepared matches.">
+    <input id="search-query" type="search" placeholder="Object, maker, material, technique...">
+    <select><option>Any object type</option><option>Jewellery</option><option>Sculpture</option></select>
+    <select><option>Any material</option><option>Rhinestone</option><option>Bronze</option><option>Silver</option></select>
+    <button type="button" data-fill-results="search-results">Search archive</button>
+    <button type="button" data-clear-results="search-results">Reset</button>
+  </article>
+  <section id="search-results" class="result-list"></section>
+</section>
+
+<section id="page-visual" class="showroom-page" data-title="Visual Search">
+  <section class="page-head"><div><p class="eyebrow">Image comparison</p><h1>Visual Search</h1><p>Upload testing is simulated here. The sample response shows how RChive would return visually similar archive records.</p></div></section>
+  <article class="control-panel framed-panel" data-tip="No image leaves this demo. Production visual matching uses protected indexes; this showroom returns sample matches from local JSON.">
+    <input type="file" accept="image/*">
+    <button type="button" data-fill-results="visual-results">Run visual search</button>
+    <button type="button" data-clear-results="visual-results">Reset</button>
+  </article>
+  <section id="visual-results" class="match-grid"></section>
+</section>
+
+<section id="page-hallmarks" class="showroom-page" data-title="Hallmarks">
+  <section class="page-head"><div><p class="eyebrow">Marks and signatures</p><h1>Hallmark Search</h1><p>Search marks, signatures, material clues, and evidence anchors without exposing private reference logic.</p></div></section>
+  <article class="control-panel framed-panel" data-tip="The demo shows the shape of a hallmark workflow: image evidence, entered marks, material hints, and review status.">
+    <input type="file" accept="image/*">
+    <input type="search" placeholder="Separate multiple marks with commas">
+    <select><option>Any material</option><option>Silver</option><option>Bronze</option><option>Costume jewellery</option></select>
+    <button type="button" data-fill-results="hallmark-results">Search hallmarks</button>
+    <button type="button" data-clear-results="hallmark-results">Reset</button>
+  </article>
+  <section id="hallmark-results" class="knowledge-list"></section>
+</section>
+
+<section id="page-smart" class="showroom-page" data-title="Smart Search">
+  <section class="page-head"><div><p class="eyebrow">Combined research</p><h1>Smart Search</h1><p>A guided research query that combines text, image, materials, and archive context into one mock result.</p></div></section>
+  <article class="control-panel framed-panel" data-tip="Production Smart Search coordinates several RChive tools. The showroom reveals the workflow, not the internal ranking methods.">
+    <input type="file" accept="image/*">
+    <textarea placeholder="Describe the object">silver-tone parrot brooch with clear stones</textarea>
+    <input type="text" placeholder="silver, enamel">
+    <button type="button" data-fill-results="smart-results">Run smart search</button>
+    <button type="button" data-clear-results="smart-results">Reset</button>
+  </article>
+  <section id="smart-results" class="result-list"></section>
+</section>
+
+<section id="page-makers" class="showroom-page" data-title="Makers & Brands">
+  <section class="page-head"><div><p class="eyebrow">Archive identification metric</p><h1>Makers & Brands</h1><p>Names and candidates extracted from approved sample metadata, marks, and object notes.</p></div><input id="maker-filter" type="search" placeholder="Maker or brand"></section>
+  <section class="knowledge-list">
+    {% for maker in makers %}
+    <article class="framed-panel" data-tip="This is a demo identity candidate linked to sample archive records."><span>{{ maker.kind }}</span><h2>{{ maker.name }}</h2><p>{{ maker.note }}</p><div class="tag-row">{% for item in maker.linked_objects %}<small>{{ item }}</small>{% endfor %}</div></article>
+    {% endfor %}
+  </section>
+</section>
+
+<section id="page-sources" class="showroom-page" data-title="Sources">
+  <section class="page-head"><div><p class="eyebrow">Research registry</p><h1>Sources</h1><p>Configured pull/import sources for archive data: museum APIs, specialist object or hallmark sources, plus V49 local object intake and import history.</p></div></section>
+  <section class="two-col">
+    <article class="control-panel framed-panel" data-tip="This mirrors V49 local physical-object intake. It belongs here because Sources also tracks local items and import history. The demo writes nowhere.">
+      <h2>Physical object intake</h2><input value="Parrot rhinestone brooch"><input value="Brooch"><input value="Unknown maker"><input value="Silver-tone metal, clear stones"><input type="date" value="2026-10-04"><input type="file"><button type="button" data-mock-action="stage-object">Stage local object</button>
+    </article>
+    <article class="control-panel framed-panel" data-tip="Sources are places RChive pulls/imports archive records from, such as museum APIs or specialist object/hallmark sources. This showroom uses mock responses only.">
+      <h2>Configured pull sources</h2>{% for source in sources %}<p><strong>{{ source.name }}</strong><br><small>{{ source.kind }} · {{ source.simulated_url }} · {{ source.status }}</small></p>{% endfor %}<button type="button" data-mock-action="pull-source">Simulate source pull</button>
+    </article>
+  </section>
+  <section class="timeline">
+    <article data-tip="Import history belongs to Sources in V49. This is a sample batch only.">
+      <span>Archive activity</span>
+      <h2>Sample import history</h2>
+      <p>Demo batch: 3 object records, 3 images, 2 configured pull sources, 0 live network calls.</p>
+      <small>Production import batches track real archive activity; this showroom records nothing.</small>
+    </article>
+  </section>
+</section>
+
+<section id="page-commerce" class="showroom-page" data-title="Commerce">
+  <section class="page-head"><div><p class="eyebrow">Commerce command center</p><h1>One master inventory. Every channel.</h1><p>RChive keeps archive records, commerce products, listings, orders, readiness, and audit activity connected.</p></div></section>
+  <section class="metrics"><div><strong>2</strong><span>Master products</span></div><div><strong>3</strong><span>Channel mocks</span></div><div><strong>0</strong><span>Live listings</span></div><div><strong>2</strong><span>Drafts ready</span></div></section>
+  <article class="control-panel framed-panel" data-tip="Listing Maker is planned as an AI-assisted commerce tool. It can be local, hosted, or service-tier based depending on compute, automation, and marketplace workload.">
+    <span>Listing Maker</span>
+    <h2>AI-assisted marketplace listing builder</h2>
+    <p>Being prepared for RChive Breadmaker beta: generate channel-ready titles, descriptions, SEO keywords, condition disclosures, category hints, price framing, and marketplace-specific formats for major channels.</p>
+    <div class="tag-row">
+      <small>AI-assisted</small>
+      <small>service automation option</small>
+      <small>major marketplace formats</small>
+      <small>SEO support</small>
+      <small>tier / credit aware</small>
+    </div>
+    <div class="actions"><button type="button" data-mock-action="listing-maker">Preview listing maker</button></div>
+  </article>
+  <section class="commerce-list">
+    {% for draft in drafts %}
+    <article class="draft" data-tip="Validation is mocked. Publishing is always blocked."><div><span>{{ draft.channel }}</span><h2>{{ draft.title }}</h2><p>{{ draft.description }}</p></div><div class="draft-meta"><strong>{{ draft.price }}</strong><small>{{ draft.condition }}</small><small>{{ draft.shipping }}</small></div><pre>{{ draft.disclosures | join("\n") }}</pre><div class="actions"><button data-demo-post="/commerce/validate">Validate</button><button data-demo-post="/commerce/publish">Publish</button></div></article>
+    {% endfor %}
+  </section>
+  <div id="commerce-result" class="result hidden"></div>
+</section>
+
+<section id="page-mobile" class="showroom-page" data-title="Mobile">
+  <section class="page-head"><div><p class="eyebrow">Roadmap companion</p><h1>Mobile Companion</h1><p>Being prepared for RChive Breadmaker beta as a companion layer, not a replacement for the desktop archive.</p></div></section>
+  <section class="routing-grid">
+    <article class="result-card" data-tip="Mobile is planned as capture/sync support for field work and quick intake."><span>Capture</span><h2>Photos and field notes</h2><p>Planned mobile workflow: capture object photos, quick notes, dimensions, marks, and acquisition context, then sync into desktop intake.</p></article>
+    <article class="result-card" data-tip="The mobile companion should route into Sources/local intake and Review rather than becoming a separate archive."><span>Sync</span><h2>Desktop archive handoff</h2><p>Mobile sessions are expected to become staged local objects, review candidates, or evidence attachments in the main RChive archive.</p></article>
+    <article class="result-card" data-tip="Some mobile features may depend on account tier, hosted sync, or remote AI availability."><span>Routing</span><h2>Local plus hosted support</h2><p>Basic capture can be local-first; sync, remote AI, batch identification, and team workflows may be hosted or tier-based.</p></article>
+  </section>
+</section>
+
+<section id="page-horology" class="showroom-page" data-title="Horology">
+  <section class="page-head"><div><p class="eyebrow">Breadmaker beta module</p><h1>Horology</h1><p>Actively being prepared for RChive Breadmaker first beta as a specialized watch/clock research module.</p></div></section>
+  <section class="routing-grid">
+    <article class="result-card"><span>In development</span><h2>Watch and clock object profiles</h2><p>Planned fields include maker, movement, case material, serial/reference notes, dial condition, service notes, and provenance.</p></article>
+    <article class="result-card"><span>Testing</span><h2>Visual and mark evidence</h2><p>Planned workflows include dial/caseback images, movement photos, hallmark or stamp review, and Knowledge links.</p></article>
+    <article class="result-card"><span>Capability routing</span><h2>Local, hosted, or hybrid</h2><p>Core records stay local-first; heavier identification, reference matching, or valuation support may route through hosted/paid capabilities.</p></article>
+  </section>
+</section>
+
+<section id="page-numismatics" class="showroom-page" data-title="Numismatics">
+  <section class="page-head"><div><p class="eyebrow">Breadmaker beta module</p><h1>Numismatics</h1><p>Actively being prepared for RChive Breadmaker first beta as a specialized coins, medals, and currency research module.</p></div></section>
+  <section class="routing-grid">
+    <article class="result-card"><span>In development</span><h2>Coin and medal profiles</h2><p>Planned fields include denomination, issuer, date, mint, metal, weight, diameter, edge, grade notes, and provenance.</p></article>
+    <article class="result-card"><span>Testing</span><h2>Obverse / reverse evidence</h2><p>Planned workflows include image pairs, inscription capture, mint-mark review, die/variant notes, and Knowledge links.</p></article>
+    <article class="result-card"><span>Capability routing</span><h2>Local, hosted, or hybrid</h2><p>Core cataloging stays local-first; image matching, attribution help, and market analysis may be hosted, paid, or tier-dependent.</p></article>
+  </section>
+</section>
+
+<section id="page-knowledge" class="showroom-page" data-title="Knowledge">
+  <section class="page-head"><div><p class="eyebrow">RChive Reference Library</p><h1>Knowledge</h1><p>The private digital library: scanned books, PDFs, documents, notes, and reference material uploaded by the user, then searched and linked to objects, makers, hallmarks, and review candidates.</p></div><form class="filters" data-demo-search><input type="search" placeholder="Maker, technique, material, hallmark..."><button>Search</button></form></section>
+  <section class="two-col">
+    <article class="framed-panel manual-card" data-tip="Knowledge is not a pull source. It is the user's uploaded reference library."><span>Digital library</span><h2>Uploaded reference material</h2><p>Demo library: one antique jewellery PDF sample, object notes, and short extracted-style reference cards. Production user uploads remain private.</p></article>
+    <div class="knowledge-list">{% for article in knowledge %}<article class="framed-panel" data-tip="{{ article.demo_disclosure }}"><span>{{ article.category }}</span><h2>{{ article.title }}</h2><p>{{ article.summary }}</p><div class="tag-row">{% for tag in article.tags %}<small>{{ tag }}</small>{% endfor %}</div></article>{% endfor %}</div>
+  </section>
+</section>
+
+<section id="page-review" class="showroom-page" data-title="Review">
+  <section class="page-head"><div><p class="eyebrow">Curator workspace</p><h1>Candidate Review</h1><p>Evidence-first review queue with candidate diagnostics, mock promote, and mock reject.</p></div></section>
+  <section class="knowledge-list">{% for candidate in review %}<article class="framed-panel" data-tip="Promotion/rejection is simulated and does not alter canonical data."><span>{{ candidate.status }}</span><h2>{{ candidate.title }}</h2><p>{{ candidate.evidence }}</p><div class="tag-row">{% for diagnostic in candidate.diagnostics %}<small>{{ diagnostic }}</small>{% endfor %}</div><div class="actions"><button data-demo-post="/api/v1/review/candidates/{{ candidate.id }}/promote">Promote</button><button type="button" data-mock-action="reject">Reject</button></div></article>{% endfor %}</section>
+</section>
+
+<aside id="demo-guide" class="guide-panel" aria-hidden="true">
+  <button type="button" class="guide-close" data-guide-close>×</button>
+  <p class="eyebrow">Buyer walkthrough</p>
+  <h2>What this showroom proves</h2>
+  <p>This browser demo mirrors the visible V49 desktop modules with a tiny sample archive. It uses approved sample objects and mock responses instead of production services.</p>
+  <ol>
+    <li>Start in Archive and inspect the three sample records.</li>
+    <li>Run Search, Visual Search, Hallmarks, and Smart Search to see mocked research outputs.</li>
+    <li>Use Sources to inspect configured pull sources, local object intake, and import history.</li>
+    <li>Open Knowledge to see the private uploaded-reference-library concept.</li>
+    <li>Use Commerce to validate a draft, then try Publish and confirm it is blocked.</li>
+    <li>Use Review to see evidence diagnostics and non-mutating candidate actions.</li>
+  </ol>
+  <h2>What is protected</h2>
+  <p>No production credentials, private research corpus, real database, live marketplace integration, or sensitive infrastructure is included.</p>
+  <h2>Capability routing and tiers</h2>
+  <p>RChive is not planned as one single local/remote switch. Capabilities can be local, hosted, or hybrid. Hosted AI, automation, concurrency, batch jobs, and some marketplace tools may be paid, metered, credit-based, or tier-limited.</p>
+  <h2>Roadmap modules</h2>
+  <p>Mobile Companion, Horology, and Numismatics are shown as Breadmaker beta modules being actively prepared and tested. Their demo pages disclose planned workflows without exposing unreleased internals.</p>
+</aside>
+{% endblock %}

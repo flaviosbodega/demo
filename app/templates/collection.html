@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Collection Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Collection management</p>
+    <h1>Sample object catalog</h1>
+  </div>
+  <form class="filters" method="get">
+    <select name="category">
+      <option value="all">All categories</option>
+      {% for item in categories %}<option value="{{ item }}" {% if item == category %}selected{% endif %}>{{ item }}</option>{% endfor %}
+    </select>
+    <select name="status">
+      <option value="all">All statuses</option>
+      {% for item in statuses %}<option value="{{ item }}" {% if item == status %}selected{% endif %}>{{ item }}</option>{% endfor %}
+    </select>
+    <button>Filter</button>
+  </form>
+</section>
+
+<section class="object-grid">
+  {% for item in objects %}
+  <a class="object-card" href="/collection/{{ item.id }}">
+    <img src="{{ url_for('static', path=item.image) }}" alt="{{ item.title }}">
+    <div>
+      <span>{{ item.category }}</span>
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+      <strong>{{ item.estimated_value }}</strong>
+      <small>{{ item.status }}</small>
+    </div>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{
+  "service": "image_identification",
+  "status": "simulated",
+  "matches": [
+    {
+      "title": "Late 19th-century carved walnut side chair",
+      "confidence": 82
+    },
+    {
+      "title": "Studio ceramic vessel with ash glaze",
+      "confidence": 74
+    }
+  ],
+  "demo_only": true
+}

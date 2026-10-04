@@ -1,0 +1,16 @@
+[
+  {
+    "id": "mob-001",
+    "title": "Chair intake photo set",
+    "status": "Ready to sync",
+    "notes": "Placeholder mobile capture includes front, side, underside, and detail shots.",
+    "sync_target": "Would sync to obj-001 in production; demo is read-only."
+  },
+  {
+    "id": "mob-002",
+    "title": "Ceramic base mark capture",
+    "status": "Draft notes",
+    "notes": "Simulated companion flow for adding field notes and close-up mark images.",
+    "sync_target": "Would create a research task; demo stores nothing."
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "status": "blocked",
+  "message": "Live marketplace writes are disabled in this sanitized demo.",
+  "external_write": false
+}

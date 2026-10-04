@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}API Stubs{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">API stubs</p>
+    <h1>Read-only and mock-write endpoints</h1>
+    <p class="muted">These endpoints return synthetic JSON. Write-like calls are contained and publishing is blocked.</p>
+  </div>
+</section>
+
+<section class="api-list">
+  {% for endpoint in endpoints %}
+  <a href="{% if endpoint.startswith('GET ') %}{{ endpoint[4:].replace('{object_id}', 'obj-001').replace('{id}', 'obj-001') }}{% else %}#{% endif %}">{{ endpoint }}</a>
+  {% endfor %}
+</section>
+{% endblock %}

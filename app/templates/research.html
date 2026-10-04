@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Research Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Research workflow</p>
+    <h1>Synthetic research notes</h1>
+  </div>
+  <form class="filters" method="get">
+    <select name="object_id">
+      <option value="">All objects</option>
+      {% for item in objects %}<option value="{{ item.id }}" {% if selected and selected.id == item.id %}selected{% endif %}>{{ item.title }}</option>{% endfor %}
+    </select>
+    <button>View notes</button>
+    <button name="compare" value="true">Compare references</button>
+  </form>
+</section>
+
+{% if comparison %}
+<div class="result">{{ comparison }}</div>
+{% endif %}
+
+<section class="timeline">
+  {% for note in notes %}
+  <article>
+    <span>{{ note.date }}</span>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.summary }}</p>
+    <small>{{ note.source_type }} / {{ note.confidence }}</small>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Identification Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Visual search</p>
+    <h1>Mock image identification</h1>
+    <p class="muted">Uploads are not persisted. The demo returns fixed synthetic matches.</p>
+  </div>
+  <form class="upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*">
+    <button>Run mock identification</button>
+  </form>
+</section>
+
+{% if uploaded %}
+<div class="result">Processed {{ filename }} through the hosted visual search simulator.</div>
+{% endif %}
+
+<section class="match-grid">
+  {% for match in matches %}
+  <article class="match-card">
+    <img src="{{ url_for('static', path=match.image) }}" alt="{{ match.title }}">
+    <div>
+      <span>{{ match.confidence }}% confidence</span>
+      <h2>{{ match.title }}</h2>
+      <p>{{ match.rationale }}</p>
+      <small>{{ match.next_step }}</small>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

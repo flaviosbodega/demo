@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Hosted Services Demo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">Capability routing</p>
+    <h1>Local and hosted service simulation</h1>
+  </div>
+</section>
+
+<section class="service-table">
+  {% for service in services %}
+  <article>
+    <div>
+      <span>{{ service.route }}</span>
+      <h2>{{ service.task }}</h2>
+      <p>{{ service.demo_behavior }}</p>
+    </div>
+    <strong>{{ service.status }}</strong>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

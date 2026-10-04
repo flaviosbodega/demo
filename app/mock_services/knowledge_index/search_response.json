@@ -1,0 +1,12 @@
+{
+  "service": "knowledge_index",
+  "status": "simulated",
+  "query": "maker mark",
+  "results": [
+    {
+      "knowledge_id": "know-002",
+      "title": "Studio Pottery Mark Review"
+    }
+  ],
+  "demo_only": true
+}

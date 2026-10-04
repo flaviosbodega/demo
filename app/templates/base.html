@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}RChive Demo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/demo.css') }}">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <span class="sidebar-corner sidebar-corner--top" aria-hidden="true"></span>
+        <span class="sidebar-corner sidebar-corner--bottom" aria-hidden="true"></span>
+        <a class="brand" href="/">
+          <img class="brand__logo" src="{{ url_for('static', path='/rchive-assets/logosolo.png') }}" alt="RChive emblem">
+          <span class="brand__tagline">
+            <span><strong>R</strong>Chive the <em>past.</em></span>
+            <span><strong>R</strong>eveal the <em>story.</em></span>
+          </span>
+        </a>
+        <div class="ornamental-divider" aria-hidden="true"><span>◆</span></div>
+        <nav class="navigation">
+          <a href="/" class="is-active" data-page-nav="archive"><span>⌂</span><b>Archive</b></a>
+          <a href="/#search" data-page-nav="search"><span>⌕</span><b>Search</b></a>
+          <a href="/#visual" data-page-nav="visual"><span>▧</span><b>Visual Search</b></a>
+          <a href="/#hallmarks" data-page-nav="hallmarks"><span>◇</span><b>Hallmarks</b></a>
+          <a href="/#smart" data-page-nav="smart"><span>✦</span><b>Smart Search</b></a>
+          <a href="/#makers" data-page-nav="makers"><span>◈</span><b>Makers & Brands</b></a>
+          <a href="/#sources" data-page-nav="sources"><span>▣</span><b>Sources</b></a>
+          <a href="/#commerce" data-page-nav="commerce"><span>◇</span><b>Commerce</b></a>
+          <a href="/#knowledge" data-page-nav="knowledge"><span>✦</span><b>Knowledge</b></a>
+          <a href="/#review" data-page-nav="review"><span>◉</span><b>Review</b></a>
+          <a href="/#mobile" data-page-nav="mobile"><span>▤</span><b>Mobile</b></a>
+          <a href="/#horology" data-page-nav="horology"><span>◷</span><b>Horology</b></a>
+          <a href="/#numismatics" data-page-nav="numismatics"><span>◎</span><b>Numismatics</b></a>
+        </nav>
+        <article class="service-card framed-panel">
+          <span class="service-card__dot"></span>
+          <div>
+            <strong>Local / hosted routing</strong>
+            <small>Demo shows capability tiers</small>
+          </div>
+        </article>
+      </aside>
+      <main class="workspace">
+        <div class="notice">Sanitized demo. Synthetic data only. Live integrations disabled.</div>
+        {% block content %}{% endblock %}
+        <footer>
+          RChive sanitized buyer demo. No production credentials, personal data, private corpus, or live marketplace writes.
+        </footer>
+      </main>
+    </div>
+    <script src="{{ url_for('static', path='/js/demo.js') }}"></script>
+  </body>
+</html>

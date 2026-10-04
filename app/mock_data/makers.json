@@ -1,0 +1,23 @@
+[
+  {
+    "id": "maker-unknown-jewellery",
+    "name": "Unknown costume jewellery maker",
+    "kind": "Maker candidate",
+    "note": "Linked to the parrot brooch until back-side marks and clasp construction are reviewed.",
+    "linked_objects": ["obj-parrot-brooch", "hall-parrot", "draft-parrot"]
+  },
+  {
+    "id": "maker-dante-subject",
+    "name": "Dante subject inscription",
+    "kind": "Subject, not maker",
+    "note": "The visible DANTE text is treated as subject evidence, not a maker attribution.",
+    "linked_objects": ["obj-dante-bust", "res-dante-001"]
+  },
+  {
+    "id": "maker-nelson-candidate",
+    "name": "Nelson folder candidate",
+    "kind": "Attribution candidate",
+    "note": "Demo maker candidate connected to the supplied feather ring image and local maker-folder context.",
+    "linked_objects": ["obj-feather-ring", "hall-ring", "cand-ring"]
+  }
+]

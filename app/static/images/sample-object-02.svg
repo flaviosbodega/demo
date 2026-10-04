@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Stylized ceramic vessel">
+  <rect width="800" height="600" fill="#e9f0ec"/>
+  <path d="M320 170 C280 260 275 410 400 455 C525 410 520 260 480 170 C440 145 360 145 320 170Z" fill="#60796f"/>
+  <path d="M326 190 C365 218 436 218 474 190" fill="none" stroke="#c8d7be" stroke-width="18" stroke-linecap="round"/>
+  <path d="M318 265 C365 292 437 292 484 265" fill="none" stroke="#94aa8e" stroke-width="14" stroke-linecap="round"/>
+  <ellipse cx="400" cy="168" rx="82" ry="28" fill="#2d3d38"/>
+  <ellipse cx="400" cy="166" rx="54" ry="14" fill="#e9f0ec"/>
+  <text x="400" y="535" text-anchor="middle" font-family="Arial" font-size="26" fill="#425049">Synthetic sample image</text>
+</svg>
